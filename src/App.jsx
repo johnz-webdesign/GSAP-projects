@@ -1,18 +1,20 @@
 import { useState } from "react";
-import "./script";
+import { useRef } from "react";
 import { gsap } from "gsap";
 
 function App() {
   const [count, setCount] = useState(0);
 
+  const headerRef = useRef(null);
+
   const animate = () => {
-    gsap.to("#header", { x: 200, duration: 1 });
+    gsap.from(headerRef.current, { duration: 1, y: "-100%" });
   };
 
   return (
     <>
       <div data-t="wrapper" className="m-0 flex h-[100vh] flex-col text-3xl">
-        <div id="header" className="h-[15vh] bg-red-500">
+        <div ref={headerRef} id="header" className="h-[15vh] bg-red-500">
           <div
             data-t="div-links"
             className="flex h-full items-center justify-around text-white"
@@ -22,6 +24,13 @@ function App() {
             <div data-t="link">Link 3</div>
           </div>
         </div>
+
+        <button
+          onClick={animate}
+          className="mt-5 rounded bg-blue-500 p-3 text-white"
+        >
+          Animate Header
+        </button>
 
         <div data-t="content" className="flex h-full justify-between">
           <div data-t="sidebar left" className="w-[15vw] bg-green-500"></div>
