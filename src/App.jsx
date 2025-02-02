@@ -8,7 +8,7 @@ function App() {
   const headerRef = useRef(null);
 
   const animate = () => {
-    gsap.from(headerRef.current, { duration: 1, y: "-100%" });
+    gsap.from(headerRef.current, { duration: 1, y: "-100%", ease: "bounce" });
   };
 
   return (
@@ -25,21 +25,26 @@ function App() {
           </div>
         </div>
 
-        <button
-          onClick={animate}
-          className="mt-5 rounded bg-blue-500 p-3 text-white"
-        >
-          Animate Header
-        </button>
-
         <div data-t="content" className="flex h-full justify-between">
           <div data-t="sidebar left" className="w-[15vw] bg-green-500"></div>
-          <button
-            data-t="btn"
-            className="cursor-pointer self-center rounded-xl border bg-slate-700 p-4 text-white transition-opacity duration-300 hover:opacity-75"
-          >
-            Reverse!
-          </button>
+
+          <div className="flex gap-3 self-center">
+            <button
+              data-t="btn"
+              onClick={animate}
+              className="cursor-pointer rounded-xl border bg-slate-700 p-4 text-white transition-opacity duration-300 hover:opacity-75"
+            >
+              Animate
+            </button>
+
+            <button
+              data-t="btn"
+              className="cursor-pointer rounded-xl border bg-slate-700 p-4 text-white transition-opacity duration-300 hover:opacity-75"
+            >
+              Reverse
+            </button>
+          </div>
+
           <div data-t="sidebar right" className="w-[15vw] bg-green-500"></div>
         </div>
 
