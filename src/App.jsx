@@ -1,13 +1,18 @@
 import { useState } from "react";
 import "./script";
+import { gsap } from "gsap";
 
 function App() {
   const [count, setCount] = useState(0);
 
+  const animate = () => {
+    gsap.to("#header", { x: 200, duration: 1 });
+  };
+
   return (
     <>
       <div data-t="wrapper" className="m-0 flex h-[100vh] flex-col text-3xl">
-        <div data-t="header" className="h-[15vh] bg-red-500">
+        <div id="header" className="h-[15vh] bg-red-500">
           <div
             data-t="div-links"
             className="flex h-full items-center justify-around text-white"
