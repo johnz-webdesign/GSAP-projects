@@ -1,27 +1,36 @@
 import { useState } from "react";
-import { useRef } from "react";
 import { gsap } from "gsap";
 
 function App() {
   const [count, setCount] = useState(0);
 
-  const headerRef = useRef(null);
-
   const animate = () => {
-    gsap.from(headerRef.current, { duration: 1, y: "-100%", ease: "bounce" });
+    gsap.from(".navbar-gsap", { duration: 1, y: "-100%", ease: "bounce" });
+    gsap.from(".navlink-gsap", {
+      duration: 2,
+      opacity: 0,
+      delay: 0.1,
+      stagger: 0.5,
+    });
   };
 
   return (
     <>
       <div data-t="wrapper" className="m-0 flex h-[100vh] flex-col text-3xl">
-        <div ref={headerRef} id="header" className="h-[15vh] bg-red-500">
+        <div data-t="header" className="navbar-gsap h-[15vh] bg-red-500">
           <div
             data-t="div-links"
             className="flex h-full items-center justify-around text-white"
           >
-            <div data-t="link">Link 1</div>
-            <div data-t="link">Link 2</div>
-            <div data-t="link">Link 3</div>
+            <div data-t="link" className="navlink-gsap">
+              Link 1
+            </div>
+            <div data-t="link" className="navlink-gsap">
+              Link 2
+            </div>
+            <div data-t="link" className="navlink-gsap">
+              Link 3
+            </div>
           </div>
         </div>
 
