@@ -2,34 +2,6 @@ import { gsap } from "gsap";
 
 function App() {
   const animate = () => {
-    // gsap.from(".navbar-gsap", { duration: 1, y: "-100%", ease: "bounce" });
-    // gsap.from(".navlink-gsap", {
-    //   duration: 1,
-    //   opacity: 0,
-    //   delay: 0.1,
-    //   stagger: 0.5,
-    // });
-    // gsap.from(".right-bar-gsap", {
-    //   duration: 1,
-    //   x: "-100vw",
-    //   delay: 1,
-    //   ease: "power2.in",
-    // });
-    // gsap.from(".left-bar-gsap", {
-    //   duration: 1,
-    //   x: "-100vw",
-    //   delay: 1.5,
-    //   ease: "power2.in",
-    // });
-    // gsap.to(".footer-gsap", { duration: 1, y: 0, ease: "elastic", delay: 2.5 });
-
-    // gsap.fromTo(
-    //   ".reverse-gsap",
-    //   { opacity: 0, scale: 0, rotation: 720 },
-    //   { duration: 1, delay: 3.5, opacity: 1, scale: 1, rotation: 0 }
-    // );
-
-    // timeline
     const timeline = gsap.timeline({ defaults: { duration: 1 } });
     timeline
       .from(".navbar-gsap", { y: "-100%", ease: "bounce" })
@@ -124,3 +96,31 @@ function App() {
 }
 
 export default App;
+
+// Original Method
+// gsap.from(".navbar-gsap", { duration: 1, y: "-100%", ease: "bounce" });
+// gsap.from(".navlink-gsap", {
+//   duration: 1,
+//   opacity: 0,
+//   delay: 0.1,
+//   stagger: 0.5,
+// });
+// gsap.from(".right-bar-gsap", {
+//   duration: 1,
+//   x: "-100vw",
+//   delay: 1,
+//   ease: "power2.in",
+// });
+// gsap.from(".left-bar-gsap", {
+//   duration: 1,
+//   x: "-100vw",
+//   delay: 1.5,
+//   ease: "power2.in",
+// });
+// gsap.to(".footer-gsap", { duration: 1, y: 0, ease: "elastic", delay: 2.5 });
+
+// gsap.fromTo(
+//   ".reverse-gsap",
+//   { opacity: 0, scale: 0, rotation: 720 },
+//   { duration: 1, delay: 3.5, opacity: 1, scale: 1, rotation: 0 }
+// );
