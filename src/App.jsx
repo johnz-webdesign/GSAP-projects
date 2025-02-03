@@ -7,10 +7,22 @@ function App() {
   const animate = () => {
     gsap.from(".navbar-gsap", { duration: 1, y: "-100%", ease: "bounce" });
     gsap.from(".navlink-gsap", {
-      duration: 2,
+      duration: 1,
       opacity: 0,
       delay: 0.1,
       stagger: 0.5,
+    });
+    gsap.from(".right-bar-gsap", {
+      duration: 1,
+      x: "-100vw",
+      delay: 1,
+      ease: "power2.in",
+    });
+    gsap.from(".left-bar-gsap", {
+      duration: 1,
+      x: "-100vw",
+      delay: 1.5,
+      ease: "power2.in",
     });
   };
 
@@ -35,7 +47,10 @@ function App() {
         </div>
 
         <div data-t="content" className="flex h-full justify-between">
-          <div data-t="sidebar left" className="w-[15vw] bg-green-500"></div>
+          <div
+            data-t="sidebar left"
+            className="left-bar-gsap w-[15vw] bg-green-500"
+          ></div>
 
           <div className="flex gap-3 self-center">
             <button
@@ -54,7 +69,10 @@ function App() {
             </button>
           </div>
 
-          <div data-t="sidebar right" className="w-[15vw] bg-green-500"></div>
+          <div
+            data-t="sidebar right"
+            className="right-bar-gsap w-[15vw] bg-green-500"
+          ></div>
         </div>
 
         <div data-t="footer" className="h-[15vh] bg-blue-500"></div>
