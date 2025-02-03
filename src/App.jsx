@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { gsap } from "gsap";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   const animate = () => {
     // gsap.from(".navbar-gsap", { duration: 1, y: "-100%", ease: "bounce" });
     // gsap.from(".navlink-gsap", {
@@ -104,6 +101,7 @@ function App() {
 
             <button
               data-t="btn"
+              // onClick={reverseAnimation}
               className="reverse-gsap cursor-pointer rounded-xl border bg-slate-700 p-4 text-white transition-opacity duration-300 hover:opacity-75"
             >
               Reverse
